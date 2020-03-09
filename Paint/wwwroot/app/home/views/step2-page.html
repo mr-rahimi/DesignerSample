@@ -1,0 +1,21 @@
+﻿<div class="panel panel-default">
+    <div class="panel-body">
+        <div>
+            <div class="col-md-2">
+                <h4 style="text-align: center;" ng-bind="'properties' | translate"></h4>
+                <div class="panel" ng-if="step2.activeObject">
+                    <label ng-bind="'fill' | translate"></label>
+                    <input type="color" ng-model="step2.activeObject.fill" ng-change="step2.render()"/>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="canvas_container">
+                    <canvas id="c"></canvas>
+                </div>
+            </div>
+            <button class="col-md-2 btn btn-primary"
+                    ng-click="step2.send()"
+                    ng-bind="'sendImage' | translate"></button>
+        </div>
+    </div>
+</div>

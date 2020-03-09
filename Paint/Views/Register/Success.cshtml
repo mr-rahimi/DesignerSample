@@ -1,0 +1,25 @@
+﻿@section scripts
+    {
+}
+<div class="container" dir="rtl">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <table class="table table-hover table-responsive">
+                <tr>
+                    <td class="alert-success">درگاه پرداخت</td>
+                    <td>@ViewBag.Bank</td>
+                </tr>
+                <tr>
+                    <td class="alert-success"> وضعیت پرداخت</td>
+                    <td>@ViewBag.Message</td>
+                </tr>
+                <tr>
+                    <td class="alert-success">کد رهگیری</td>
+                    <td>@ViewBag.SaleReferenceId</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

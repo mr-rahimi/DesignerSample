@@ -1,0 +1,18 @@
+﻿@section scripts
+    {
+    <script>
+    window.LinkLogin = '@ViewBag.LinkLogin';
+    window.LinkOrig = '@ViewBag.LinkOrig';
+    window.IP = '@ViewBag.IP';
+   window.ChapId = '@ViewBag.ChapId';
+   window.ChapChallenge = '@ViewBag.ChapChallenge';
+   window.Error = '@ViewBag.Error';
+    </script>
+    <script src="~/app/login/app.js"></script>
+    <script src="~/app/login/js/md5.js"></script>
+
+}
+
+<div ng-app="app" ui-view>
+
+</div>

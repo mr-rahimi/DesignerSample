@@ -1,0 +1,81 @@
+﻿<div class="panel panel-default" >
+    <div class="panel-body">
+        <form name="register">
+            <div class="clearfix "></div>
+            <div class="form-group col-md-4 col-sm-6">
+                <label class="control-label">{{'Service' | translate }}</label>
+                <ui-select ng-model="selectedService.model" theme="bootstrap">
+                    <ui-select-match placeholder="{{'Service' | translate }}">
+                        <span dir="ltr">{{$select.selected.speed}}</span>,
+                        <span>{{$select.selected.price}}</span>,
+                        <span>{{$select.selected.duration}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in services | filter: $select.search">
+                        <span dir="ltr" ng-bind-html="item.speed | highlight: $select.search"></span>,
+                        <small ng-bind-html="item.price | highlight: $select.search"></small>,
+                        <small ng-bind-html="item.duration | highlight: $select.search"></small>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group col-md-4 col-sm-6">
+                <label class="control-label">{{'Price' | translate }}</label>
+                <div class="icon-addon addon-md">
+                    <span ng-bind="selectedService.model.price" placeholder="{{'Price' | translate }}" class="form-control bg-disabled" id="price"></span>
+                    <label for="price" class="fa fa-dollar-sign" rel="tooltip" title="{{'Price' | translate }}"></label>
+                </div>
+            </div>
+            <div class="clearfix "></div>
+            <div class="form-group col-md-4 col-sm-6">
+                <label class="control-label">{{'FirstName' | translate }}</label>
+                <div class="icon-addon addon-md">
+                    <input type="text" ng-model="model.firstName" placeholder="{{'FirstName' | translate }}" class="form-control" id="firstName">
+                    <label for="firstName" class="fa fa-user" rel="tooltip" title="{{'FirstName' | translate }}"></label>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-sm-6">
+                <label class="control-label">{{'LastName' | translate }}</label>
+                <div class="icon-addon addon-md">
+                    <input type="text" ng-model="model.lastName" placeholder="{{'LastName' | translate }}" class="form-control" id="lastName">
+                    <label for="lastName" class="fa fa-users" rel="tooltip" title="{{'LastName' | translate }}"></label>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-sm-6">
+                <label class="control-label">{{'NationalCode' | translate }}</label>
+                <div class="icon-addon addon-md">
+                    <input type="number" name="nationalCode" mask="9999999999" ng-model="model.nationalCode" placeholder="{{'NationalCode' | translate }}" class="form-control" maxlength="10" id="nationalCode" required pattern="[0-9]{10}">
+                    <label for="nationalCode" class="fa fa-barcode" rel="tooltip" title="{{'NationalCode' | translate }}"></label>
+                </div>
+                <div ng-messages="register.nationalCode.$error" ng-if="register.nationalCode.$dirty">
+                    <div class="text-danger" ng-message="required">
+                        {{'RequiredValidation' | translate }}
+                    </div>
+                    <div class="text-danger" ng-message="pattern">
+                        {{'NationalCodeValidation' | translate }}
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix "></div>
+            <div class="form-group col-md-4 col-sm-6">
+                <label class="control-label">{{'Mobile' | translate }}</label>
+                <div class="icon-addon addon-md">
+                    <input type="number" name="mobile" ng-model="model.mobile" placeholder="{{'Mobile' | translate }}" class="form-control" id="mobile" mask="9999999999" maxlength="10" required pattern="[0-9]{10}">
+                    <label for="mobile" class="fa fa-mobile-alt" rel="tooltip" title="{{'Mobile' | translate }}"></label>
+                </div>
+                <div ng-messages="register.mobile.$error" ng-if="register.mobile.$dirty">
+                    <div class="text-danger" ng-message="required">
+                        {{'RequiredValidation' | translate }}
+                    </div>
+                    <div class="text-danger" ng-message="pattern">
+                        {{'MobileValidation' | translate }}
+                    </div>
+                </div>
+            </div>
+            <botdetect-captcha styleName="exampleCaptcha"></botdetect-captcha>
+            
+            <div class="clearfix "></div>
+            <div class="form-group col-md-4 col-sm-6">
+                <button type="button" ng-click="postForm()" class="btn btn-primary">{{'RegisterAndActivation' | translate }}</button>
+            </div>
+        </form>
+    </div>
+</div>

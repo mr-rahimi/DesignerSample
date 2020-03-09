@@ -1,0 +1,30 @@
+﻿@import 'site';
+html{
+    direction:ltr;
+}
+.navbar img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    float: left;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width .5s, height .5s;
+}
+.icon-addon .fa {
+    right: 10px;
+    margin-right: -2.5px;
+}
+/*ui-select*/
+.ui-select-container .ui-select-placeholder {
+    text-align: left !important;
+    float: left;
+    margin-left: 15px;
+}
+.ui-select-container .ui-select-match-text {
+    text-align: left !important;
+}
+.canvas_container {
+    width: 100%;
+    direction: rtl;
+}

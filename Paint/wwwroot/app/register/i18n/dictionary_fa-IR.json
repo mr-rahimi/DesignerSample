@@ -1,0 +1,17 @@
+﻿{
+  "Hello": "خوش آمدید",
+  "Email": "آدرس پست الکترونیک",
+  "FirstName": "نام",
+  "LastName": "نام خانوادگی",
+  "Mobile": "شماره همراه اول",
+  "MobileValidation": "شماره موبایل ده رقمی می باشد",
+  "NationalCode": "کد ملی",
+  "NationalCodeValidation": "کد ملی ده رقمی می باشد",
+  "Price": "مبلغ قابل پرداخت با احتساب مالیات ارزش افزوده",
+  "RequiredValidation": "وارد کردن این فیلد اجباری می باشد",
+  "Service": "طرح انتخابی شما",
+  "RegisterAndActivation": "ثبت نام و فعالسازی",
+  "Rial": "ریال",
+  "Free": "رایگان",
+  "Days": "{{day}} روزه"
+}

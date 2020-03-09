@@ -1,0 +1,98 @@
+﻿@using System.Globalization;
+@using System.Threading;
+@{
+    CultureInfo uiCultureInfo = Thread.CurrentThread.CurrentUICulture;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Paint</title>
+    @{Html.RenderPartial("Styles");}
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+    <nav id="navbar-element" ng-controller="NavbarController" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/images/logo.svg" alt="logo">
+                <a class="navbar-brand page-scroll" href="/">
+                    <span>
+                        Paint
+                    </span>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/Home" ng-bind="'Home' | translate"></a>
+                    </li>
+                    @*<li>
+                        <a class="page-scroll" href="/Service" ng-bind="'Services' | translate"></a>
+                    </li>
+                    <li>
+                        <a href="/About" ng-bind="'About' | translate"></a>
+                    </li>
+                    <li>
+                        <a href="/login" ng-bind="'Login' | translate"></a>
+                    </li>*@
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="flag-icon flag-icon-{{currentCulture.name.split('-')[1].toLowerCase()}}"></span>
+                            <span dir="{{currentCulture.isRtl ? 'rtl' : 'ltr'}}">{{currentCulture.nativeName}}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="item in allCulture" ng-if="item.name != currentCulture.name">
+                                <a ng-click="changeLanguage(item.name)">
+                                    <span class="flag-icon flag-icon-{{item.name.split('-')[1].toLowerCase()}}"></span>
+                                    <span dir="{{item.isRtl ? 'rtl' : 'ltr'}}">{{item.nativeName}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Intro Section -->
+    <section id="content" class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <footer class="footer" id="footer-element">
+        <div class="container">
+            <p class="text-center" ng-bind="'AllRightsReserved' | translate"></p>
+        </div>
+    </footer>
+    @{Html.RenderPartial("Scripts");}
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<div class="panel panel-default">
+    <div class="panel-body">
+        <div>
+            <div class="col-md-2">
+                <h4 style="text-align: center;" ng-bind="'toolbox' | translate"></h4>
+                <div class="panel">
+                    <button class="btn btn-default btn-block"
+                            ng-click="index.addText()"
+                            ng-bind="'AddText' | translate"></button>
+                    <button class="btn btn-default btn-block"
+                            ng-click="index.addRect()"
+                            ng-bind="'AddRectangle' | translate"></button>
+                    <button class="btn btn-default btn-block"
+                            ng-click="index.addCircle()"
+                            ng-bind="'AddCircle' | translate"></button>
+                    <button class="btn btn-default btn-block"
+                            ng-click="index.addTriangle()"
+                            ng-bind="'AddTriangle' | translate"></button>
+                    <button class="btn btn-default btn-block"
+                            ng-click="index.addTextbox()"
+                            ng-bind="'AddTextbox' | translate"></button>
+                    <button class="btn btn-default btn-block"
+                            ng-click="index.remove()"
+                            ng-bind="'Remove' | translate"></button>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="canvas_container" style="">
+                    <canvas id="c"></canvas>
+                </div>
+            </div>
+            <button class="col-md-2 btn btn-primary"
+                    ng-click="index.gotoStep2()"
+                    ng-bind="'continue' | translate"></button>
+        </div>
+    </div>
+</div>

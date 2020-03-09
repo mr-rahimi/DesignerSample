@@ -1,0 +1,17 @@
+﻿{
+  "Hello": "Welcome",
+  "Email": "Email",
+  "FirstName": "FirstName",
+  "LastName": "LastName",
+  "Mobile": "Mobile",
+  "MobileValidation": "Mobile number must be exactly 10 digit",
+  "NationalCode": "National Code",
+  "NationalCodeValidation": "NationalCode must be exactly 10 digit",
+  "Price": "Price with VAT",
+  "RequiredValidation": "This field is required",
+  "Service": "Service",
+  "RegisterAndActivation": "Register & Activation",
+  "Rial": "Rial",
+  "Free": "Free",
+  "Days": "{{day}} days"
+}
